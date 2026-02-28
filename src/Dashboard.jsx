@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import {
   PieChart,
   Pie,
@@ -95,7 +94,7 @@ function Dashboard({ navigateTo }) {
         if (loggedInUser) setUserName(loggedInUser.name);
 
         const response = await fetch(
-          `http://localhost:5000/api/transactions/user/${currentUserId}`,
+          `https://rfh-finance-backend.onrender.com/api/transactions/user/${currentUserId}`,
         );
         const result = await response.json();
 
@@ -151,9 +150,6 @@ function Dashboard({ navigateTo }) {
 
   return (
     <div className="min-h-screen bg-gray-50 flex font-sans text-gray-900 relative">
-      <Helmet>
-        <title>Dashboard - RFH Finance</title>
-      </Helmet>
       {/* Mobile Header */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-100 z-30 flex justify-between items-center px-6">
         <h1 className="text-xl font-extrabold tracking-tight">

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import {
   HiMenu,
   HiX,
@@ -262,13 +261,6 @@ function App() {
   // ----- RENDER HALAMAN HOME -----
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-emerald-100 selection:text-emerald-900">
-      <Helmet>
-        <title>RFH Finance - Kelola Keuangan Mudah & Cerdas</title>
-        <meta
-          name="description"
-          content="Aplikasi pencatat keuangan terbaik untuk mengelola pengeluaran harian Anda."
-        />
-      </Helmet>
       <Navbar />
 
       {/* Hero Section */}

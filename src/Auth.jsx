@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import {
   HiOutlineMail,
   HiOutlineLockClosed,
@@ -28,11 +27,14 @@ function Auth({ onLoginSuccess, onBack }) {
       : { email, password };
 
     try {
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        `https://rfh-finance-backend.onrender.com${endpoint}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        },
+      );
 
       const data = await response.json();
 
@@ -59,9 +61,6 @@ function Auth({ onLoginSuccess, onBack }) {
 
   return (
     <div className="min-h-screen flex font-sans text-gray-900 bg-white">
-      <Helmet>
-        <title>{isRegister ? "Daftar Akun" : "Masuk"} - RFH Finance</title>
-      </Helmet>
       {/* ========================================== */}
       {/* PANEL KIRI (Ilustrasi & Branding - Sembunyi di HP) */}
       {/* ========================================== */}
